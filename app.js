@@ -17,7 +17,7 @@ var tags = require('./routes/tags');
 var middleware = require('./routes/middleware');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/brello');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/brello');
 
 var app = express();
 
