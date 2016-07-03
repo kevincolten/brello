@@ -6,7 +6,7 @@ var bcrypt = require('bcrypt');
 var UserModel = require('../models/UserModel');
 
 router.get('/', function(req, res, next) {
-  if(req.isAuthenticated()) {
+  if(!req.isAuthenticated()) {
     res.redirect('/login');
   } else {
     res.render('index', { title: 'Express', username: req.user.username });
